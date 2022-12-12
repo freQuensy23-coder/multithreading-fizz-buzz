@@ -14,6 +14,8 @@ add_executable(fizz-buzz-like-a-pro
     main.cpp
     controller.h
     controller.cpp
+    LoadBalancer.cpp
+    LoadBalancer.h
 
     outstream/outstream.h
     outstream/fileoutstream.h
