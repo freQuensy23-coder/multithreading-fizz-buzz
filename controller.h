@@ -3,7 +3,6 @@
 
 #include <intnumber.h>
 #include <fileoutstream.h>
-#include <string>
 
 #include <numbersender.h>
 #include <fizzsender.h>
@@ -17,7 +16,7 @@ public:
     Controller(std::shared_ptr<OutStream>, std::shared_ptr<Number>);
 
     void process_to(int n);
-    std::string process_per(int start, int end);
+    void process_period(int start, int end);
 private:
     std::shared_ptr<OutStream> out;
     std::shared_ptr<Number> num;
