@@ -32,5 +32,7 @@ int main() {
 
     loadBalancer.join_result(NUM_THREADS);
 
+
+    // TODO Delete *.tmp files
     return 0;
 }
