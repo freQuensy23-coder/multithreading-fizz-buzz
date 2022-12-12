@@ -7,7 +7,11 @@
 #import <vector>
 
 class LoadBalancer {
-    std::vector<int> balance(int num_threads, int max_num);};
+    public:
+    std::vector<int> balance(int num_threads, int max_num);
+
+    void join_result(int num_threads);
+};
 
 
 #endif //FIZZ_BUZZ_LIKE_A_PRO_LOADBALANCER_H
