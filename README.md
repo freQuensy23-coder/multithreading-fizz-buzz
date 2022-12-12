@@ -6,7 +6,7 @@ Given an integer n, return a string such that:
 * Add "Buzz" if i is divisible by 5.
 * Add i (as a string) if none of the above conditions are true.
 
-# Possible solution
+# Possible solutions
 Despite the fact that the solution in few lines with one for loop is possible, иге it does not follow extensibility principles: for example:
 * If we want to configure IOStream we will not be able to do this. For example it will not work on a PC without monitors.
 * We can not easy modify send fizz, send buzz and send fizz buzz behaviour.
@@ -14,4 +14,7 @@ Despite the fact that the solution in few lines with one for loop is possible, �
 * This solution is enought slow
 
 ### OOP Solution
-:w
+Obvios OOP - style solution based on five classes. You can see basic principles of it on the diagram below. 
+![](https://i.imgur.com/WzZR8yq.png)
+
+
