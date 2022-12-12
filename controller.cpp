@@ -31,6 +31,20 @@ void Controller::process_to(int n) {
     }
 }
 
-std::string process_period(int start, int end){
-	
+
+void Controller::process_period(int start, int end){
+	for(int i = start; i <= end; i ++) {
+	        num->set(i);
+        	if(i % 15 == 0) {
+	            fizzbuzzsender.send();
+        	} else if (i % 3 == 0) {
+	            fizzsender.send();
+        	} else if (i % 5 == 0) {
+	            buzzsender.send();
+        	} else {
+	            numbersender.send();
+        	}
+	        out->sendString("\n");
+    }
+
 }
