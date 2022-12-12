@@ -1,4 +1,5 @@
 #include <controller.h>
+#include <string>
 
 Controller::Controller(): Controller(std::shared_ptr<OutStream> (new FileOutStream("main.txt")),
                                      std::shared_ptr<Number> (new IntNumber)) {}
@@ -28,4 +29,8 @@ void Controller::process_to(int n) {
         out->sendString("\n");
 
     }
+}
+
+std::string process_period(int start, int end){
+	
 }
