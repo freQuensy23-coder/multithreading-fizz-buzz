@@ -23,18 +23,23 @@ std::vector<int> LoadBalancer::balance(int num_threads, int max_num) {
     return res;
 }
 
-void LoadBalancer::join_result(int num_threads) {
+void LoadBalancer::get_final_result(int num_threads) {
     // Concatenate all main*.tmp files into main.txt
-    std::ofstream outfile;
-    outfile.open("main.txt");
+    std::ofstream main_file("main.txt");
     for (int i = 0; i < num_threads; i++) {
-        std::ifstream infile;
-        infile.open("main" + std::to_string(i) + ".tmp");
+        std::ifstream tmp_file(tmp_filename(i));
         std::string line;
         while (std::getline(infile, line)) {
             outfile << line;
         }
         infile.close();
     }
-    outfile.close();
+
+}
+
+std::string LoadBalancer::tmp_filename(int i) {
+    // Get filename for tmp file with thread work results
+    std::string filename = "main" + std::to_string(i) + ".tmp";
+    return filename;
+
 }

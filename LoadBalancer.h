@@ -10,7 +10,9 @@ class LoadBalancer {
     public:
     std::vector<int> balance(int num_threads, int max_num);
 
-    void join_result(int num_threads);
+    void get_final_result(int num_threads);
+
+    static std::string tmp_filename(int i);
 };
 
 
