@@ -13,7 +13,7 @@ class FizzBuzzSender: public FizzSender, public BuzzSender
 {
 public:
     FizzBuzzSender(std::shared_ptr<OutStream>, std::shared_ptr<Number>);
-    void send();
+    void send() final;
 private:
     std::shared_ptr<OutStream> out;
     std::shared_ptr<Number> number_resource;
