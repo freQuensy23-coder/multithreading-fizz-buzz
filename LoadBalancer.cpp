@@ -29,10 +29,16 @@ void LoadBalancer::get_final_result(int num_threads) {
     for (int i = 0; i < num_threads; i++) {
         std::ifstream tmp_file(tmp_filename(i));
         std::string line;
-        while (std::getline(infile, line)) {
-            outfile << line;
+        if (tmp_file.is_open() and main_file.is_open()) {
+            while (getline(tmp_file, line)) {
+                std::cout << line << '\n';
+                main_file << line << std::endl;
+            }
+            tmp_file.close();
+            std::remove(LoadBalancer::tmp_filename(i).c_str());
+        } else {
+            throw std::runtime_error("Unable to open file, check os settings");
         }
-        infile.close();
     }
 
 }
